@@ -1,0 +1,55 @@
+﻿@page "/formdata"
+@using System.Text.Json;
+
+<PageTitle>FormData</PageTitle>
+
+<GridRow>
+    <GridCol Xs="24" Md="24" Lg="24">
+        <Card>
+            <Form 
+                Model="@model"    
+                LabelCol="_labelCol"
+                WrapperCol="_wrapperCol"
+            >
+                <h1>ข้อมูลส่วนบุคคล</h1>
+                <Divider />
+                <FormItem Label="ชื่อ" Required>
+                    <Input @bind-Value="@context.FirstName"/>
+                </FormItem>
+                <FormItem Label="นามสกุล" Required>
+                    <Input @bind-Value="@context.LastName"/>
+                </FormItem>
+
+                <h1>ข้อมูลที่อยู่ตามทะเบียนบ้าน</h1>
+                <Divider />
+                <FormItem Label="ชื่อ" Required>
+                    <Input @bind-Value="@context.FirstName"/>
+                </FormItem>
+                <FormItem Label="นามสกุล" Required>
+                    <Input @bind-Value="@context.LastName"/>
+                </FormItem>
+            </Form>          
+        </Card>
+    </GridCol>
+</GridRow>
+
+@code {
+    ColLayoutParam _labelCol = new ColLayoutParam 
+    { 
+        Xs = new EmbeddedProperty { Span = 24 },
+        Sm = new EmbeddedProperty { Span = 6 },
+    };
+
+    ColLayoutParam _wrapperCol = new ColLayoutParam
+    {
+        Xs = new EmbeddedProperty { Span = 24 },
+        Sm = new EmbeddedProperty { Span = 14 },
+    };
+
+    public class Model {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+    }
+
+    private Model model = new Model();
+}

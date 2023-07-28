@@ -5558,25 +5558,25 @@
     ]
   },
   "packageFolders": {
-    "/Users/csmwit1/.nuget/packages/": {}
+    "C:\\Users\\sorng\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/csmwit1/BlazorApp/BlazorApp.csproj",
+      "projectUniqueName": "D:\\work\\PSU\\TCAS66\\BlazorApp.csproj",
       "projectName": "BlazorApp",
-      "projectPath": "/Users/csmwit1/BlazorApp/BlazorApp.csproj",
-      "packagesPath": "/Users/csmwit1/.nuget/packages/",
-      "outputPath": "/Users/csmwit1/BlazorApp/obj/",
+      "projectPath": "D:\\work\\PSU\\TCAS66\\BlazorApp.csproj",
+      "packagesPath": "C:\\Users\\sorng\\.nuget\\packages\\",
+      "outputPath": "D:\\work\\PSU\\TCAS66\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/csmwit1/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\sorng\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/sdk/7.0.306/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5619,7 +5619,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.306/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }
