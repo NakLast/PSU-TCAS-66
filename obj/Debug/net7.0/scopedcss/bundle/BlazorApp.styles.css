@@ -1,0 +1,42 @@
+/* _content/BlazorApp/Shared/DynamicMenu.razor.rz.scp.css */
+<Menu Mode="MenuMode.Inline">
+    <Image 
+        Src="PSULogo.png"
+        Preview=false
+        Style="
+            background-color: white; 
+            height: 90px; 
+            margin-left: 20px;
+            margin-top: -10px;
+        "
+    />
+    @foreach (var menu in MenuItems)[b-zogsep7fhj]
+    {
+        <MenuItem>
+            <Icon Type="@menu.Icon" />
+            <a href="@menu.Url">@menu.Title</a>
+        </MenuItem>
+    }
+</Menu>
+
+@code[b-zogsep7fhj] {
+    private List<Menu> MenuItems;
+    private string selectedMenuKeys;
+
+    protected override void OnInitialized()
+    {
+        MenuItems = new List<Menu>
+        {
+            new Menu { Title = "Home", Icon = "home", Url = "/home" },
+            new Menu[b-zogsep7fhj] { Title = "Counter", Icon = "appstore", Url = "/counter" },
+            new Menu[b-zogsep7fhj] { Title = "Fetch Data", Icon = "appstore", Url = "/fetchdata" }
+        };[b-zogsep7fhj]
+    }
+
+    private class Menu[b-zogsep7fhj]
+    {
+        public string Title { get; set; }
+        public string Icon[b-zogsep7fhj] { get; set; }
+        public string Url[b-zogsep7fhj] { get; set; }
+    }
+}

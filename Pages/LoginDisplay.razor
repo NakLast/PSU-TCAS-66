@@ -1,0 +1,63 @@
+@page "/"
+@layout EmptyLayout
+@inject NavigationManager UriHelper
+
+@using System.ComponentModel.DataAnnotations;
+@using System.Text.Json;
+@using System.ComponentModel;
+
+<PageTitle>Login</PageTitle>
+
+<GridRow Align="middle">
+    <GridCol Xs="24" Md="12" Lg="8" Push="1">
+        <Form Model="@model" OnFinish="OnFinish" OnFinishFailed="OnFinishFailed" style="width: 70%;">
+            <FormItem Label=" Username">
+                <Input @bind-Value="@context.Username" />
+            </FormItem>
+            <FormItem Label="Password">
+                <InputPassword @bind-Value="@context.Password" />
+            </FormItem>
+            <FormItem>
+                <Checkbox @bind-Value="context.RememberMe">Remember me</Checkbox>
+            </FormItem>
+            <FormItem>
+                <Button Type="@ButtonType.Primary" HtmlType="submit" @onclick="NavigateToHome">
+                    Login
+                </Button>
+            </FormItem>
+        </Form>
+    </GridCol>
+    <GridCol Xs="24" Md="24" Lg="16">
+        <Image Height="100vh" Width="100%" Src="PSUHome.png" Preview=false />
+    </GridCol>
+</GridRow>
+
+@code
+{
+    public class Model
+    {
+        [Required]
+        public string Username { get; set; }
+        [Required]
+        public string Password { get; set; }
+        public bool RememberMe { get; set; } = true;
+    }
+
+    private Model model = new Model();
+
+    private void OnFinish(EditContext editContext)
+    {
+        Console.WriteLine($"Success:{JsonSerializer.Serialize(model)}");
+    }
+
+    private void OnFinishFailed(EditContext editContext)
+    {
+        Console.WriteLine($"Failed:{JsonSerializer.Serialize(model)}");
+    }
+
+    private void NavigateToHome(MouseEventArgs args)
+    {
+        @* Console.WriteLine("ButtonClicked"); *@
+        UriHelper.NavigateTo("/home");
+    }
+}

@@ -1,0 +1,21 @@
+﻿@inherits LayoutComponentBase
+
+<Layout Style="height: 100%;">
+    <Sider Theme="SiderTheme.Light" Breakpoint="BreakpointType.Lg" Collapsible>
+        <DynamicMenu />
+    </Sider>
+    <Layout>
+        <Header Style="padding: 0;"></Header>
+        <Content Style=" margin: 24px 16px 0;">
+            @Body
+        </Content>
+    </Layout>
+</Layout>
+
+@code {
+    bool collapsed = false;
+
+    void ToggleCollapsed() {
+        collapsed = !collapsed;
+    }
+}

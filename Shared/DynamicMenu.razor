@@ -1,0 +1,31 @@
+﻿<Image Src="PSULogo.png" Preview=false Style="height: 80px; width: 80%; margin-left: 20px; margin-top: -10px"/>
+<Menu Mode="MenuMode.Inline">
+    @foreach (var menu in MenuItems)
+    {
+        <MenuItem>
+            <Icon Type="@menu.Icon" />
+            <a href="@menu.Url">@menu.Title</a>
+        </MenuItem>
+    }
+</Menu>
+
+@code {
+    //Set MenuItem for dynamic menu.
+    private List<Menu> MenuItems;
+
+    protected override void OnInitialized() {
+        MenuItems = new List<Menu>
+        {
+            new Menu { Title = "Home", Icon = "home", Url = "/home" },
+            new Menu { Title = "Counter", Icon = "appstore", Url = "/counter" },
+            new Menu { Title = "Fetch Data", Icon = "appstore", Url = "/fetchdata" }
+        };
+    }
+
+    //Set model for dynamic menu.
+    private class Menu {
+        public string Title { get; set; }
+        public string Icon { get; set; }
+        public string Url { get; set; }
+    }
+}
